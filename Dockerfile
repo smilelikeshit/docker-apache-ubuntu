@@ -11,6 +11,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install apache2 libapache2-mod-php
 RUN php5enmod openssl
 RUN a2enmod php5
 RUN a2enmod rewrite
+RUN a2enmod remoteip
 
 # Update the PHP.ini file, enable <? ?> tags and quieten logging.
 RUN sed -i "s/short_open_tag = Off/short_open_tag = On/" /etc/php5/apache2/php.ini
