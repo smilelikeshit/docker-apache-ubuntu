@@ -17,8 +17,8 @@ EXPOSE 80
 COPY app /var/www/html
 
 # Update the default apache site with the config we created.
-ADD apache-config.conf /etc/apache2/sites-enabled/000-default.conf
-ADD apache2.conf /etc/apache/apache2.conf
+COPY 000-default.conf /etc/apache2/sites-enabled/
+COPY apache2.conf /etc/apache/
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf \
     && sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf 
     #&& sed -ri -e 's/upload_max_filesize = .*/upload_max_filesize = ${MAX_UPLOAD_SIZE}/' /usr/local/etc/php/php.ini
