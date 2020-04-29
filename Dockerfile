@@ -1,4 +1,4 @@
-FROM laravel-base-image-apache74
+FROM insignficant/laravel-base-image-apache74:latest
 
 
 RUN a2enmod remoteip
