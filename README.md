@@ -23,3 +23,8 @@ docker rm app
 
 <h1>Volume logs of container to host</h1>
 docker run -d -p 80:80 -v /data/server/app:/var/www/site/app -v /data/server/log:/var/log/apache2 --name app app 
+
+<h1>module enable</h1>
+remoteip
+rewrite
+php5
