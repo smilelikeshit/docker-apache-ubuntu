@@ -13,7 +13,7 @@ ENV APACHE_DOCUMENT_ROOT /var/www/html
 
 EXPOSE 80
 
-# Copy site into place.
+# Copy site into place#
 COPY app /var/www/html
 
 # Update the default apache site with the config we created.
