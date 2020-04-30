@@ -18,7 +18,7 @@ COPY app /var/www/html
 
 # Update the default apache site with the config we created.
 COPY 000-default.conf /etc/apache2/sites-enabled/
-
+RUN rm /etc/apache2/apache2.conf
 COPY apache2.conf /etc/apache/
 COPY apache2.conf /var/www/html/
 
