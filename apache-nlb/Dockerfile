@@ -19,9 +19,6 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     php7.2-json \
     php7.2-curl \
     php7.2-mbstring \
-    php7.2-soap \
-    php7.2-xml \
-    php7.2-zip \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN git clone https://github.com/roadrunner2/mod-proxy-protocol.git \
