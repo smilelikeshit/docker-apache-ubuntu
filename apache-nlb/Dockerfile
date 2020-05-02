@@ -22,8 +22,8 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN git clone https://github.com/roadrunner2/mod-proxy-protocol.git \
-    cd mod-proxy-protocol \
-    apxs -i -a -c mod_proxy_protocol.c
+    && cd mod-proxy-protocol \
+    && apxs -i -a -c mod_proxy_protocol.c
 
 
 COPY 000-default.conf /etc/apache2/sites-available/
